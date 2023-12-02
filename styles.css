@@ -119,6 +119,7 @@ body * {
   width: 90%;
   max-width: 640px;
   color: #B88C74;
+  text-align: center;
 }
 
 .divider {
@@ -180,6 +181,9 @@ body * {
   margin: 0 10px;
   border-radius: 5px;
   width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .time.milisecs {
