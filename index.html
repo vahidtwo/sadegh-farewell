@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sadegh's farewell</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+<body>
+<!-- Slideshow container -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+      <img src="images/1.JPG" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+      <img src="images/2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+      <img src="images/3.jpg" style="width:100%">
+  </div>
+
+
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/1.JPG" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+  
+  </div>
+</div>
+  <div class="countdown">
+      <h1>Countdown Timer to Sadegh's farewell </h1>
+      <p> We will miss you ❤️ </p>
+     <!-- <p> except: reza, mavin, fahimeh, sina, hessam, yasaman, ali(fazaeli), hadi</p>-->
+
+    <div class="timer">
+      <div class="time" id="days">00</div>
+      <div class="time" id="hours">00</div>
+      <div class="time" id="minutes">00</div>
+      <div class="time" id="seconds">00</div>
+      <div class="time" id="milliseconds">000</div>
+    </div>
+  </div>
+
+  <script>
+    // Set the date to countdown (in UTC format)
+    const countdownDate = new Date('2023-12-11T16:00:00Z').getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = countdownDate - now;
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      const milliseconds = Math.floor(difference % 1000);
+
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+      document.getElementById('milliseconds').innerText = milliseconds.toString().padStart(3, '0');
+    };
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1);
+
+    // Initial update
+    updateCountdown();
+  </script>
+  <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+  </script>
+</body>
+</html>
+
