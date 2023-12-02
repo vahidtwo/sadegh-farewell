@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Product Manager Exit Counter
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This TypeScript project aims to create a simple counter that tracks the exits of our team's product manager. The counter will be implemented using TypeScript to keep track of the number of times the product manager exits the company.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Usage
 
-- Configure the top-level `parserOptions` property like this:
+1. **Run the Application:**
+   ```bash
+   npm start
+   ```
+   This command will compile the TypeScript code and start the application.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. **Interact with the Counter:**
+   - Open your browser and navigate to `http://localhost:3000` to access the counter interface.
+   - Use the provided buttons or input fields to increment or view the exit count of the product manager.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## Contributing
+
+Feel free to contribute by forking the repository, making changes, and creating a pull request. Ensure that your code follows the project's coding standards and that tests are included if applicable.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
