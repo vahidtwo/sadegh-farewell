@@ -1,0 +1,43 @@
+
+.timer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.time-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-cont span {
+  margin-top: 0.5rem;
+}
+
+.time {
+  background-color: #333;
+  color: #fff;
+  font-size: 40px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  width: 90px;
+}
+
+.time.milisecs {
+  width: 120px;
+}
+
+.timer-labels {
+  width: 580px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.timer-description {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
