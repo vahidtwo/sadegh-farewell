@@ -1,13 +1,118 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sadegh's Farewell</title>
+    <title>Sadegh's farewell</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="app">
+      <div class="left-side">
+        <img
+          id="main-image"
+          src="assets/images/1.jpg"
+          alt="Sadegh's photo goes Here :)"
+        />
+        <div class="left-side-overlay"></div>
+      </div>
+
+      <div class="right-side">
+        <h3>Goodbye Dear</h3>
+        <h1>Sadegh</h1>
+        <p class="description">
+          Hopefully in your professional journey, you can be more enthusiastic
+          and can be even more successful.
+        </p>
+        <div class="divider"></div>
+
+        <div class="timer">
+          <div class="time-cont">
+            <div class="time" id="days">00</div>
+            <span>Days</span>
+          </div>
+          <div class="time-cont">
+            <div class="time" id="hours">00</div>
+            <span>Hours</span>
+          </div>
+          <div class="time-cont">
+            <div class="time" id="minutes">00</div>
+            <span>Minutes</span>
+          </div>
+          <div class="time-cont">
+            <div class="time" id="seconds">00</div>
+            <span>Seconds</span>
+          </div>
+          <div class="time-cont">
+            <div class="time milisecs" id="milliseconds">000</div>
+            <span>Miliseconds</span>
+          </div>
+        </div>
+        <p class="timer-description">until Sadegh's farewell...</p>
+
+        <span class="bottom-text">We'll miss you ❤️</span>
+      </div>
+
+      <div class="image-1">
+        <img src="assets/images/image-1.svg" alt="" />
+      </div>
+      <div class="image-2">
+        <img src="assets/images/image-1.svg" alt="" />
+      </div>
+    </div>
+
+    <script>
+      // Set the date to countdown (in UTC format)
+      const countdownDate = new Date("2023-12-11T16:00:00Z").getTime();
+
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const difference = countdownDate - now;
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (difference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        const milliseconds = Math.floor(difference % 1000);
+
+        document.getElementById("days").innerText = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").innerText = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").innerText = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").innerText = seconds
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("milliseconds").innerText = milliseconds
+          .toString()
+          .padStart(3, "0");
+      };
+
+      // Update the countdown every second
+      setInterval(updateCountdown, 1);
+
+      // Initial update
+      updateCountdown();
+
+      // -------------------------------------- Change Image Source
+      let count = 1;
+      setInterval(() => {
+        document.getElementById(
+          "main-image"
+        ).src = `assets/images/${count}.jpg`;
+        count++;
+        if (count > 4) {
+          count = 1;
+        }
+      }, 10000);
+    </script>
   </body>
 </html>
