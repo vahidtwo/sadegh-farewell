@@ -4,19 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sadegh's farewell</title>
+    <link rel="stylesheet" href="./swiper.min.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   </head>
   <body>
     <div class="app">
+      <!-- --------------------------------- Left Side Images --------------------------------- -->
+
       <div class="left-side">
-        <img
+        <!-- <img
           id="main-image"
           src="assets/images/1.jpg"
           alt="Sadegh's photo goes Here :)"
         />
-        <div class="left-side-overlay"></div>
+        <div class="left-side-overlay"></div> -->
+
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/1.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/2.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/3.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/4.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/5.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="slide">
+                <img src="./assets/images/6.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="swiper-button-prev">
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-rtl-bd0ug0"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-testid="ExpandLessIcon"
+            >
+              <path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium mui-rtl-bd0ug0"
+              focusable="false"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              data-testid="ExpandLessIcon"
+            >
+              <path d="m12 8-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"></path>
+            </svg>
+          </div>
+        </div>
       </div>
+
+      <!-- --------------------------------- Right Side Images --------------------------------- -->
 
       <div class="right-side">
         <h3>Goodbye Dear</h3>
@@ -26,6 +92,8 @@
           and can be even more successful.
         </p>
         <div class="divider"></div>
+
+        <!-- --------------------------------- Timer --------------------------------- -->
 
         <div class="timer">
           <div class="time-cont">
@@ -62,6 +130,7 @@
       </div>
     </div>
 
+    <script src="./swiper-bundle.min.js"></script>
     <script>
       // Set the date to countdown (in UTC format)
       const countdownDate = new Date("2023-12-12T15:00:00Z").getTime();
@@ -114,6 +183,17 @@
           count = 1;
         }
       }, 10000);
+
+      //
+      const swiper = new Swiper(".swiper", {
+        effect: "cards",
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     </script>
   </body>
 </html>
