@@ -70,6 +70,7 @@ body * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 }
 
 .left-side img {
@@ -102,24 +103,37 @@ body * {
   font-family: "Quicksand";
 }
 
-.right-side h3 {
+.left-side-texts {
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  font-family: "Quicksand";
   font-weight: 500;
   font-size: 4rem;
   color: #B88C74;
+  width: 100%;
+  text-align: center;
 }
 
-.right-side h1 {
+h1 {
   font-family: "bukhari-script";
   font-size: 6rem;
+  width: 100%;
+  text-align: center;
+  color: white;
 }
 
-.right-side .description {
+.description {
+  font-family: "Quicksand";
   margin-top: 4rem;
   font-size: 2rem;
   width: 90%;
   max-width: 640px;
   color: #B88C74;
   text-align: center;
+  width: 100%;
 }
 
 .divider {
@@ -137,6 +151,7 @@ body * {
 }
 
 .image-1 {
+  display: block;
   z-index: 1;
   position: absolute;
   top: -250px;
@@ -147,6 +162,7 @@ body * {
 }
 
 .image-2 {
+  display: block;
   z-index: -1;
   position: absolute;
   bottom: -100px;
@@ -235,4 +251,75 @@ body * {
 
 .swiper-button-next svg {
   transform: rotate(90deg);
+}
+
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .image-1,
+  .image-2 {
+    display: none;
+  }
+
+  .app {
+    flex-direction: column;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+    overflow: unset;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  h3 {
+    font-size: 9vw;
+  }
+  h1 {
+    font-size: 17vw;
+  }
+  .description {
+    font-size: 5vw;
+    padding: 0 2rem;
+  }
+  .right-side .timer-description {
+    font-size: 5vw;
+  }
+  .right-side .bottom-text {
+    font-size: 10vw;
+  }
+
+  .time {
+    font-size: 4vw;
+    width: 10vw;
+  }
+
+  .time.milisecs {
+    width: 12vw;
+  }
+  .time-cont span {
+    font-size: 2vw;
+  }
+
+  .swiper {
+    width: 90%;
+    height: 100vw;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
 }
